@@ -3,7 +3,6 @@ window.onload = function(e) {
     var operation = document.querySelectorAll('.operation');
     var inp = document.querySelectorAll('.num');
     var result = document.querySelector('.res');
-    var resultValue = 0;
     
     
     function checkInput() {
@@ -15,6 +14,8 @@ window.onload = function(e) {
     }
 
     function showResult(opBtn, op, a, b) {
+        var resultValue;
+        
         if (op == '+') {
             resultValue = a + b;
         } else if (op == '-') {
