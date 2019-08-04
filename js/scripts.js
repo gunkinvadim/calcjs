@@ -16,10 +16,8 @@ window.onload = function(e) {
 
     function showResult() {
         if (typeof(resultValue) != 'number' || isNaN(resultValue) == true) {
-            console.log(resultValue);
             result.innerHTML = 0;
         } else {
-            console.log(resultValue);
             result.innerHTML = resultValue;
         }
     }
