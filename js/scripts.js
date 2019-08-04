@@ -7,7 +7,8 @@ window.onload = function(e) {
     
     function checkInput() {
         for (var i = 0; i < inp.length; i++) {
-            if (isNaN(parseInt(inp[i].value)) == true) {
+            inp[i].value = inp[i].value.replace(/,/, '.');
+            if (isNaN(parseFloat(inp[i].value)) == true) {
                 inp[i].value = 0;
             }
         }
@@ -55,11 +56,13 @@ window.onload = function(e) {
 
     for (var i = 0; i < operation.length; i++) {
         operation[i].onclick = function() {
+            checkInput();
+            
             var opBtn = this;
             var op = this.getAttribute('data-op');
             var a = inp[0].value = parseFloat(inp[0].value);
             var b = inp[1].value = parseFloat(inp[1].value);
-            checkInput();
+            
             showResult(opBtn, op, a, b);
         };
     }
