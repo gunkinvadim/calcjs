@@ -50,8 +50,6 @@ window.onload = function(e) {
     }
 
     for (var i = 0; i < inp.length; i++) {
-        inp[i].oninput = function() {
-            btnEnable();
-        };
+        inp[i].oninput = btnEnable;
     }
 };
