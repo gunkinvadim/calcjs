@@ -1,6 +1,6 @@
 window.onload = function(e) {
     
-    var operation = document.querySelectorAll('.calc');
+    var operation = document.querySelectorAll('.operation');
     var inp = document.querySelectorAll('.num');
     var result = document.querySelector('.res');
     var resultValue = 0;
@@ -32,13 +32,13 @@ window.onload = function(e) {
     for (var i = 0; i < operation.length; i++) {
         operation[i].onclick = function() {
             checkInput();
-            if (this.getAttribute('name') == 'plus') {
+            if (this.getAttribute('data-op') == '+') {
                 resultValue = parseInt(inp[0].value) + parseInt(inp[1].value);
-            } else if (this.getAttribute('name') == 'minus') {
+            } else if (this.getAttribute('data-op') == '-') {
                 resultValue = parseInt(inp[0].value) - parseInt(inp[1].value);
-            } else if (this.getAttribute('name') == 'multiply') {
+            } else if (this.getAttribute('data-op') == '*') {
                 resultValue = parseInt(inp[0].value) * parseInt(inp[1].value);
-            } else if (this.getAttribute('name') == 'divide') {
+            } else if (this.getAttribute('data-op') == '/') {
                 resultValue = parseInt(inp[0].value) / parseInt(inp[1].value);
             }
             showResult();
