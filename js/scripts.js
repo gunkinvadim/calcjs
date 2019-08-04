@@ -1,4 +1,4 @@
-window.onload = function(e){
+window.onload = function(e) {
     
     var operation = document.querySelectorAll('.calc');
     var inp = document.querySelectorAll('.num');
@@ -6,9 +6,11 @@ window.onload = function(e){
     var resultValue = 0;
 
     
-    function btnEnable(){
-        for (var i = 0; i < operation.length; i++) {
-            operation[i].disabled = false;
+    function checkInput() {
+        for (var i = 0; i < inp.length; i++) {
+            if (typeof(parseInt(inp[i].value)) != 'number' || isNaN(parseInt(inp[i].value)) == true) {
+                inp[i].value = 0;
+            }
         }
     }
 
@@ -22,13 +24,12 @@ window.onload = function(e){
         }
     }
 
-    function checkInput() {
-        for (var i = 0; i < inp.length; i++) {
-            if (typeof(parseInt(inp[i].value)) != 'number' || isNaN(parseInt(inp[i].value)) == true) {
-                inp[i].value = 0;
-            }
+    function btnEnable() {
+        for (var i = 0; i < operation.length; i++) {
+            operation[i].disabled = false;
         }
     }
+
 
     for (var i = 0; i < operation.length; i++) {
         operation[i].onclick = function() {
