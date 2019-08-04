@@ -5,9 +5,9 @@ window.onload = function(e) {
     var result = document.querySelector('.res');
     
     
-    function checkInput() {
+    function checkInput(a, b) {
         for (var i = 0; i < inp.length; i++) {
-            if (typeof(parseInt(inp[i].value)) != 'number' || isNaN(parseInt(inp[i].value)) == true) {
+            if (typeof(a || b) != 'number' || isNaN(parseInt(inp[i].value)) == true) {
                 inp[i].value = 0;
             }
         }
@@ -15,7 +15,7 @@ window.onload = function(e) {
 
     function showResult(opBtn, op, a, b) {
         var resultValue;
-        
+
         if (op == '+') {
             resultValue = a + b;
         } else if (op == '-') {
@@ -57,9 +57,9 @@ window.onload = function(e) {
         operation[i].onclick = function() {
             var opBtn = this;
             var op = this.getAttribute('data-op');
-            var a = parseInt(inp[0].value);
-            var b = parseInt(inp[1].value);
-            checkInput();
+            var a = parseFloat(inp[0].value);
+            var b = parseFloat(inp[1].value);
+            checkInput(a, b);
             showResult(opBtn, op, a, b);
         };
     }
