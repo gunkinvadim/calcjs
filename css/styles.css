@@ -1,4 +1,41 @@
 html, body{
     margin: 40px;
+    text-align: center;
 }
 
+.calc-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.operation {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.operation:hover {
+    background-color: rgba(0, 128, 0, 0.5);
+    cursor: pointer;
+}
+
+.operation[disabled] {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.operation[disabled]:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+    cursor: auto;
+}
+
+.num {
+    width: 60px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    padding: 3px;
+}
